@@ -44,8 +44,7 @@ body {
       font-size: 2.2em;
       color: $white;
       border-radius: 0.7rem 0.7rem 0 0;
-      border-bottom: 0.25rem solid $gray;
-      transition: all 0.3s;
+      transition: all 0.2s;
     }
     .header__nav-li:first-of-type { margin-left: 5rem; }
     .header__nav-li:first-of-type,
@@ -54,8 +53,9 @@ body {
       margin-right: 5rem;
     }
     .header__nav-li:hover {
-      background: #575757;
-      box-shadow: 0 0.2rem 0.5rem $whiteBoxShadow;
+      // background: #575757;
+      box-shadow: 0 0.1rem 0 $gray;
+      // border-bottom: 0.15rem solid $gray;
     }
   }
   .header__nav-ul:last-of-type { justify-content: flex-end; }
