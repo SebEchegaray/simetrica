@@ -1,0 +1,113 @@
+// Color Variables
+$white: #FFFFFF;
+$black: #000000;
+
+// Primary Colors
+$blue: #364E68;
+$boxShadow: #575757;
+$whiteBoxShadow: #FFFFFF;
+
+// Secondary Colors
+$gray: #EBF0F6;
+
+*, html, body { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 10px; }
+
+body {
+  background: $gray;
+}
+
+// MAIN NAV BAR STYLES
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  height: 12vh;
+  margin: 1rem auto 5rem;
+  padding: 1.5vh 0;
+  background: $blue;
+  box-shadow: 0 1rem 1.5rem $boxShadow;
+  border-bottom: 0.1rem solid $gray;
+  .header__nav-ul {
+    display: flex;
+    height: 40%;
+    .header__nav-li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18rem;
+      height: 100%;
+      font-family: 'Geomanist-Regular';
+      // font-size: 2.5rem;
+      font-size: 2.2em;
+      color: $white;
+      border-radius: 0.7rem 0.7rem 0 0;
+      border-bottom: 0.25rem solid $gray;
+      transition: all 0.3s;
+    }
+    .header__nav-li:first-of-type { margin-left: 5rem; }
+    .header__nav-li:first-of-type,
+    .header__nav-li:nth-of-type(3),
+    .header__nav-li:last-of-type {
+      margin-right: 5rem;
+    }
+    .header__nav-li:hover {
+      background: #575757;
+      box-shadow: 0 0.2rem 0.5rem $whiteBoxShadow;
+    }
+  }
+  .header__nav-ul:last-of-type { justify-content: flex-end; }
+
+  .rotating__logo-container {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    .rotating__logo {
+      height: 100%;
+      animation: App-logo-spin infinite 10s linear;
+    }
+  }
+}
+
+.header__nav-li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.content__main-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+// Common Styles
+.rotating__logo-container,
+.header__nav-ul {
+  width: 33%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// FONTS
+@font-face {
+  font-family: 'MyriadPro-Regular';
+  src: local('MyriadPro-Regular'),
+  url('../fonts/MyriadPro-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Geomanist-Regular';
+  src: local('Geomanist-Regular'),
+  url('../fonts/Geomanist-Regular.otf') format('opentype');
+  font-weight: 400;
+}
