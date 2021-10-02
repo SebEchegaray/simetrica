@@ -35,6 +35,11 @@ function App() {
           <Home />
         </Route>
       </Switch>
+
+      <footer>
+        <h2>Ademas necesitamos saber que queres poner como informacion relevante para el cliente aca en el footer. Aca siempre van los detalles de contacto y demas cosas sobre la empresa, pero quiero saber que mas queres poner.</h2><br />
+        <p className="powered__by"><span>Powered by </span><strong>SEBECH</strong></p>
+      </footer>
     </Router>
   );
 }
