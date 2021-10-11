@@ -1,0 +1,75 @@
+// Color Variables
+$white: #FFFFFF;
+$whiteTransparent: rgba(255,255,255,0.4);
+$black: #000000;
+
+// Primary Colors
+$blue: #364E68;
+$lighterBlue: #6594c5;
+$boxShadow: #575757;
+$whiteBoxShadow: #FFFFFF;
+
+// Secondary Colors
+$gray: #EBF0F6;
+
+.grid__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 43rem;
+  border: 0.2rem solid $blue;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem $boxShadow;
+  transition: 0.3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  .overlay__text {
+    position: absolute;
+    top: 100%;
+    border-radius: 0 0 1rem 1rem;
+    transition: all 0.2s;
+    color: $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geomanist-Regular';
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    width: 100%;
+    height: 20%;
+    background: $lighterBlue;
+    svg {
+      height: 50%;
+      width: 10%;
+    }
+  }
+}
+.image:hover > .overlay__text { transform: translateY(-90%); }
+.image:hover {
+  box-shadow: 0 0 1.3rem $black;
+}
+
+@media (max-width: 1300px) {
+  .grid__images {
+    width: 100%;
+  }
+  .image {
+    height: 28rem;
+    .overlay__text {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      height: 25%;
+    }
+  }
+}

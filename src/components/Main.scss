@@ -1,5 +1,6 @@
 // Color Variables
 $white: #FFFFFF;
+$whiteTransparent: rgba(255,255,255,0.4);
 $black: #000000;
 
 // Primary Colors
@@ -16,6 +17,34 @@ html { font-size: 10px; }
 
 body { background: $gray; }
 
+// BANNER IMAGE STYLES
+.ghost__wrapper {
+  width: 100%;
+  height: 95vh;
+  .banner__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.galeria__banner {
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 2%;
+    }
+    .text__logo {
+      width: 100%;
+      &.galeria {
+        width: 10%;
+      }
+    }
+  }
+}
+// BANNER IMAGE STYLES
+
 // MAIN NAV BAR STYLES
 .header__nav {
   position: fixed;
@@ -29,6 +58,7 @@ body { background: $gray; }
   background: $blue;
   box-shadow: 0 1rem 1.5rem $boxShadow;
   border-bottom: 0.1rem solid $gray;
+  transition: all 0.4s;
   .header__nav-ul {
     display: flex;
     height: 40%;
@@ -39,9 +69,8 @@ body { background: $gray; }
       width: 18rem;
       height: 100%;
       font-family: 'Geomanist-Regular';
-      // font-size: 2.5rem;
       font-size: 2.2em;
-      color: $white;
+      color: $gray;
       border-radius: 0.7rem 0.7rem 0 0;
       transition: all 0.2s;
     }
@@ -54,11 +83,6 @@ body { background: $gray; }
     .header__nav-li:hover {
       box-shadow: 0 0.1rem 0 $gray;
     }
-    @media (max-width: 1300px) {
-      .header__nav-li {
-        font-size: 1.7em;
-      }
-    }
   }
   .header__nav-ul:last-of-type { justify-content: flex-end; }
 
@@ -69,6 +93,23 @@ body { background: $gray; }
     .rotating__logo {
       height: 100%;
       animation: App-logo-spin infinite 10s linear;
+    }
+  }
+  &.scroll__nav {
+    height: 6vh;
+    background: $black;
+    .header__nav-li {
+      color: $white;
+    }
+    .header__nav-li:hover {
+      box-shadow: 0 0.15rem 0 $white !important;
+    }
+    @media (max-width: 1300px) {
+      height: 8vh;
+      .header__nav-li {
+        font-size: 1.7em;
+        line-height: 1.8em;
+      }
     }
   }
 }
@@ -83,22 +124,18 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: absolute;
+  justify-content: space-between;
+  position: relative;
   bottom: 0;
   width: 100%;
-  padding: 0 10rem;
-  min-height: 10vh;
+  padding: 3rem;
+  height: 10vh;
   background: $blue;
   border-top: 0.1rem solid $gray;
   box-shadow: 0 0.1rem 1.5rem $boxShadow;
   h2 {
     color: $white;
   }
-  @media (max-width: 1300px) {
-    padding: 1rem 5rem;
-  }
-
   .powered__by {
     font-family: 'MyriadPro-Regular';
     font-size: 1.1rem;
@@ -109,9 +146,16 @@ footer {
       font-style: italic;
       margin-right: 0.2rem;
     }
-    @media (max-width: 1300px) {
+  }
+  @media (max-width: 1300px) {
+    min-height: 13vh;
+    padding: 2rem 10rem;
+    h2 {
       font-size: 1.1rem;
-      line-height: 1.5rem;
+    }
+    .powered__by {
+      font-size: 0.9rem;
+      line-height: 0.9rem;
       span {
         margin-right: 0.2rem;
       }
@@ -124,12 +168,30 @@ footer {
 // Common Styles
 .content__main-wrapper {
   width: 80%;
-  margin: 20vh auto 23vh;
+  margin: 0 auto;
+  padding: 7vh 0 10vh;
 }
 
 .rotating__logo-container,
 .header__nav-ul {
   width: 33%;
+}
+
+.h1__main-style {
+  font-family: 'MyriadPro-Regular';
+  font-weight: 400;
+  font-size: 4em;
+  color: $gray;
+  width: 100%;
+  text-align: center;
+  background: $blue;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 0.5rem 1rem $boxShadow;
+  @media (max-width: 1300px) {
+    margin-bottom: 3rem;
+  }
 }
 
 @keyframes App-logo-spin {
