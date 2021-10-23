@@ -180,17 +180,20 @@ footer {
 .h1__main-style {
   font-family: 'MyriadPro-Regular';
   font-weight: 400;
-  font-size: 4em;
+  font-size: 5em;
   color: $gray;
   width: 100%;
   text-align: center;
   background: $blue;
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  margin-bottom: 4rem;
-  box-shadow: 0 0.5rem 1rem $boxShadow;
+  padding: 7rem 1.5rem;
+  margin-top: 8rem;
+  border-bottom: 0.1rem solid $white;
+  box-shadow: 0 0.3rem 0.7rem $boxShadow;
+  p {
+    text-shadow: 0 0 0.4rem $white;
+  }
   @media (max-width: 1300px) {
-    margin-bottom: 3rem;
+    // margin-top: 6rem;
   }
 }
 

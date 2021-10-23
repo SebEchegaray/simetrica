@@ -13,7 +13,7 @@ export class Galeria extends Component  {
   }
 
   increaseSize = () => {
-    // this.setState = ({ fullSize: '' })
+    this.setState = ({ fullSize: 'full' })
   }
 
   render() {
@@ -24,8 +24,9 @@ export class Galeria extends Component  {
             <img src={roundLogoBlue} alt="" className="text__logo galeria" />
           </div>
         </div>
+        
+        <h1 className="h1__main-style diff-bg"><p>Galeria</p></h1>
         <div className="content__main-wrapper">
-          <h1 className="h1__main-style">Galeria</h1>
           <section className="grid__images">
             <div className={`image ${this.state.fullSize}`} style={{ backgroundImage: `url(${firstJobImg})` }} onClick={this.increaseSize}>
               <div className="overlay__text"><ImageSearchIcon /> Ver</div>
