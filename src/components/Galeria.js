@@ -5,15 +5,17 @@ import bannerImage from '../images/Haz_de_tu_casa.png'
 import textLogo from '../images/Text_Logo_White_Transparent.png'
 import roundLogoBlue from '../images/Round_Logo_Blue.png'
 import ImageSearchIcon from '@mui/icons-material/ImageSearch';
-import firstJobImg from '../images/First_Job_Img.png'
+import galeria from './GaleriaImagenes'
 
 export class Galeria extends Component  {
   state = {
-    fullSize: '',
+    image: '',
   }
 
-  increaseSize = () => {
-    this.setState = ({ fullSize: 'full' })
+  increaseSize = (key) => {
+    let fullImgKey = key
+    
+    this.setState({ image: fullImgKey })
   }
 
   render() {
@@ -26,11 +28,25 @@ export class Galeria extends Component  {
         </div>
         
         <h1 className="h1__main-style diff-bg"><p>Galeria</p></h1>
+        
+        <div className="fullSize__container">
+          <div className="fullSizeImg" style={{backgroundImage: `url(${galeria[this.state.image]})`}}>&nbsp;</div> {/* Full size Img */}
+          {/*
+            *** I need to add here all the images available so people don't have to close 
+            the current on to see a different image
+            *** I also need to add a function to close the images so people can keep enjoying the web
+          */}
+        </div>
+
         <div className="content__main-wrapper">
           <section className="grid__images">
-            <div className={`image ${this.state.fullSize}`} style={{ backgroundImage: `url(${firstJobImg})` }} onClick={this.increaseSize}>
-              <div className="overlay__text"><ImageSearchIcon /> Ver</div>
-            </div>
+            {Object.keys(galeria).map(img => {
+              return (
+                <div key={img} className="image" style={{ backgroundImage: `url(${galeria[img]})` }} onClick={() => { this.increaseSize(img) }}>
+                  <div className="overlay__text"><ImageSearchIcon /> Ver</div>
+                </div>
+              )
+            })}
           </section>
         </div>
       </div>

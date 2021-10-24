@@ -48,6 +48,7 @@ body { background: $gray; }
 // MAIN NAV BAR STYLES
 .header__nav {
   position: fixed;
+  z-index: 5;
   top: 0;
   display: flex;
   justify-content: space-between;
