@@ -5,17 +5,33 @@ import bannerImage from '../images/Haz_de_tu_casa.png'
 import textLogo from '../images/Text_Logo_White_Transparent.png'
 import roundLogoBlue from '../images/Round_Logo_Blue.png'
 import ImageSearchIcon from '@mui/icons-material/ImageSearch';
+import CloseIcon from '@mui/icons-material/Close';
 import galeria from './GaleriaImagenes'
 
 export class Galeria extends Component  {
   state = {
     image: '',
+    showImg: false,
   }
 
   increaseSize = (key) => {
     let fullImgKey = key
+    let showFullImg = true
     
-    this.setState({ image: fullImgKey })
+    this.setState({
+      image: fullImgKey,
+      showImg: showFullImg,
+    })
+  }
+
+  closeImage = () => {
+    let closeImg = ''
+    let showFullImg = false
+
+    this.setState({
+      image: closeImg,
+      showImg: showFullImg,
+    })
   }
 
   render() {
@@ -29,14 +45,14 @@ export class Galeria extends Component  {
         
         <h1 className="h1__main-style diff-bg"><p>Galeria</p></h1>
         
-        <div className="fullSize__container">
-          <div className="fullSizeImg" style={{backgroundImage: `url(${galeria[this.state.image]})`}}>&nbsp;</div> {/* Full size Img */}
-          {/*
-            *** I need to add here all the images available so people don't have to close 
-            the current on to see a different image
-            *** I also need to add a function to close the images so people can keep enjoying the web
-          */}
-        </div>
+        <div className={`fullSizeImg ${this.state.showImg && 'show'}`} style={{backgroundImage: `url(${galeria[this.state.image]})`}}>
+          <div className="close__icon" onClick={this.closeImage}><CloseIcon /></div>
+        </div> {/* Full size Img */}
+        {/*
+          *** I need to add here all the images available so people don't have to close 
+          the current on to see a different image
+          *** I also need to add a function to close the images so people can keep enjoying the web
+        */}
 
         <div className="content__main-wrapper">
           <section className="grid__images">
